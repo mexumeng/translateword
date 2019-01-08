@@ -1,7 +1,7 @@
 import sys
 import requests
 import re
-from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QLabel,QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QLabel
 
 
 class App(QWidget):
@@ -50,14 +50,14 @@ class App(QWidget):
     def initUI(self):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
-        while True:
-            wd = self.getText()
-            res = self.main(wd)
-            self.label.setText(res)
-            self.show()
+        wd = self.getText()
+        res = self.main(wd)
+        self.label.update()
+        self.label.setText(res)
+        self.show()
 
     def getText(self):
-        text, okPressed = self.input.getText(self, "翻译吧！", "输入您想翻译的内容:", QLineEdit.Normal, "")
+        text, okPressed = self.input.getText(self, "翻译吧！", "输入您想翻译的内容:")
         if okPressed and text != '':
             return text
         else:
