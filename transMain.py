@@ -6,6 +6,7 @@ __date__ = "2019/1/7 19:09"
 import requests
 import re
 
+
 '''
 基于金山词霸的翻译器
 '''
